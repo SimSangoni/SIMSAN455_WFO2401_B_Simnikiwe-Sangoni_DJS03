@@ -8,6 +8,18 @@ const data = {
 };
 
 
+function createElement(tag, classNames, attributes, innerHTML) {
+    const element = document.createElement(tag);
+    if (classNames) element.classList = classNames;
+    if (attributes) {
+        for (const [key, value] of Object.entries(attributes)) {
+            element.setAttribute(key, value);
+        }
+    }
+    if (innerHTML) element.innerHTML = innerHTML;
+    return element;
+}
+
 let page = 1;
 let matches = books
 
