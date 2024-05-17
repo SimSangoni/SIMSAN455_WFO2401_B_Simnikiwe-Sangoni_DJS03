@@ -20,6 +20,42 @@ function createElement(tag, classNames, attributes, innerHTML) {
     return element;
 }
 
+function renderBookList(books, start, end) {
+    const fragment = document.createDocumentFragment();
+    for (const { author, id, image, title } of books.slice(start, end)) {
+        const element = createElement('button', 'preview', { 'data-preview': id }, `
+            <img class="preview__image" src="${image}" />
+            <div class="preview__info">
+                <h3 class="preview__title">${title}</h3>
+                <div class="preview__author">${data.authors[author]}</div>
+            </div>
+        `);
+        fragment.appendChild(element);
+    }
+    return fragment;
+}
+
+function setTheme(theme) {
+    if (theme === 'night') {
+        document.documentElement.style.setProperty('--color-dark', '255, 255, 255');
+        document.documentElement.style.setProperty('--color-light', '10, 10, 20');
+    } else {
+        document.documentElement.style.setProperty('--color-dark', '10, 10, 20');
+        document.documentElement.style.setProperty('--color-light', '255, 255, 255');
+    }
+}
+
+function populateSelectElement(selectElement, options, firstOptionText) {
+    const fragment = document.createDocumentFragment();
+    const firstOption = createElement('option', null, { value: 'any' }, firstOptionText);
+    fragment.appendChild(firstOption);
+    for (const [id, name] of Object.entries(options)) {
+        const option = createElement('option', null, { value: id }, name);
+        fragment.appendChild(option);
+    }
+    selectElement.appendChild(fragment);
+}
+
 let page = 1;
 let matches = books
 
