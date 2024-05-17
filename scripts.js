@@ -1,5 +1,13 @@
 import { books, authors, genres, BOOKS_PER_PAGE } from './data.js'
 
+const data = {
+    books,
+    authors,
+    genres,
+    BOOKS_PER_PAGE
+};
+
+
 let page = 1;
 let matches = books
 
