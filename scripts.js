@@ -1,5 +1,7 @@
 import { books, authors, genres, BOOKS_PER_PAGE } from './data.js'
 
+
+
 // Creating a data object to store books, authors, genres, and the number of books per page
 const data = {
     books,
@@ -10,7 +12,11 @@ const data = {
 
 /**
  * Creates and returns an HTML element with specified attributes and inner HTML.
- * This function abstracts the element creation process, reducing repetition.
+ * @param {string} tag - The type of element to create.
+ * @param {string} [classNames] - The class names to add to the element.
+ * @param {Object} [attributes] - The attributes to set on the element.
+ * @param {string} [innerHTML] - The inner HTML content to add to the element.
+ * @returns {HTMLElement} The created element.
  */
 function createElement(tag, classNames, attributes, innerHTML) {
     const element = document.createElement(tag);
