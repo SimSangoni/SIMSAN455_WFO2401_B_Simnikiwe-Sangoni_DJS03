@@ -32,7 +32,10 @@ function createElement(tag, classNames, attributes, innerHTML) {
 
 /**
  * Renders a list of book previews from the specified range of books.
- * This function encapsulates the logic for creating and appending book elements to a document fragment.
+ * @param {Array} books - The array of book objects to render.
+ * @param {number} start - The start index of the range of books to render.
+ * @param {number} end - The end index of the range of books to render.
+ * @returns {DocumentFragment} The document fragment containing the rendered book previews.
  */
 function renderBookList(books, start, end) {
     const fragment = document.createDocumentFragment();
