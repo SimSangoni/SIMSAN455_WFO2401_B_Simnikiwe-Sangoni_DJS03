@@ -55,7 +55,7 @@ function renderBookList(books, start, end) {
 
 /**
  * Sets the theme of the application to either 'day' or 'night'.
- * This function abstracts the logic for setting theme-related CSS properties.
+  * @param {string} theme - The theme to set ('day' or 'night').
  */
 function setTheme(theme) {
     if (theme === 'night') {
