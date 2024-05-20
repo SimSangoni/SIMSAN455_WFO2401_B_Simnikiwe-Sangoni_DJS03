@@ -70,7 +70,9 @@ function setTheme(theme) {
 
 /**
  * Populates a select element with options from a given object.
- * This function abstracts the process of populating select elements, reducing repetition.
+ * @param {HTMLSelectElement} selectElement - The select element to populate.
+ * @param {Object} options - The options to add to the select element.
+ * @param {string} firstOptionText - The text for the first option.
  */
 function populateSelectElement(selectElement, options, firstOptionText) {
     const fragment = document.createDocumentFragment();
